@@ -43,7 +43,7 @@ jobs:
           node-version: '18'
           cache: 'npm'
       - run: npm install
-      - run: npm build
+      - run: npm run build
 
   test:
     name: Test
