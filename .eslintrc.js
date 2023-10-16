@@ -3,7 +3,13 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript', 'prettier'],
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    'airbnb-typescript',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   ignorePatterns: [
     '.eslintrc.js',
     'prettierrc.js',
@@ -13,6 +19,7 @@ module.exports = {
     'obj/',
     'out/',
     '.next/',
+    'jest.config.js',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -36,6 +43,8 @@ module.exports = {
 
     // デフォルトエクスポートを使用しない
     'import/prefer-default-export': 'off',
+    'arrow-body-style': 'off',
+    'import/extensions': 'off',
   },
   settings: {
     'import/resolver': {
