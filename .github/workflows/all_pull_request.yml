@@ -75,7 +75,7 @@ jobs:
     needs: test
     if: always()
     steps:
-      - uses: technote-space/workflow-conclusion-action@v1 # Workflow の結果を取得するアクション
+      - uses: technote-space/workflow-conclusion-action@v3 # Workflow の結果を取得するアクション
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ env.WORKFLOW_CONCLUSION }}
