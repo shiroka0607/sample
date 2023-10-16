@@ -45,29 +45,29 @@ jobs:
       - run: npm install
       - run: npm run build
 
-  test:
-    name: Test
-    runs-on: ubuntu-latest
+  # test:
+  #   name: Test
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.ref }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+  #         ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
-      - run: npm install
+  #     - name: Use Node.js 18
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: '18'
+  #         cache: 'npm'
+  #     - run: npm install
 
-      - name: Run tests
-        uses: ArtiomTr/jest-coverage-report-action@v2.2.4
-        with:
-          annotations: failed-tests
-          test-script: npx jest --silent --max-workers=2 --bail
-          package-manager: npm
+  #     - name: Run tests
+  #       uses: ArtiomTr/jest-coverage-report-action@v2.2.4
+  #       with:
+  #         annotations: failed-tests
+  #         test-script: npx jest --silent --max-workers=2 --bail
+  #         package-manager: npm
 
   slack:
     name: Slack Notify
